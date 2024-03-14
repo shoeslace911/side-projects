@@ -12,7 +12,7 @@ const chessBoard = (x, y) => {
           positiveHash.push("#");
         }
       }
-      hashArray.push(positiveHash.join(""));
+      hashArray.push(positiveHash.join("") + "\n");
       positiveHash = [];
     } else {
       for (let i = 0; i <= y; i++) {
@@ -22,12 +22,12 @@ const chessBoard = (x, y) => {
           negativeHash.push(" ");
         }
       }
-      hashArray.push(negativeHash.join(""));
+      hashArray.push(negativeHash.join("") + "\n");
       negativeHash = [];
     }
     repTimes += 1;
   }
-  return console.log(hashArray);
+  return console.log(hashArray.join(""));
 };
 
-chessBoard(10, 10);
+chessBoard(100, 20);
