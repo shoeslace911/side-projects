@@ -6,21 +6,13 @@ const chessBoard = (x, y) => {
   for (let i = 1; i <= x; i++) {
     if (repTimes % 2 == 0) {
       for (let i = 0; i <= y; i++) {
-        if (i % 2 == 0) {
-          positiveHash.push(" ");
-        } else {
-          positiveHash.push("#");
-        }
+        i % 2 == 0 ? positiveHash.push(" ") : positiveHash.push("#");
       }
       hashArray.push(positiveHash.join("") + "\n");
       positiveHash = [];
     } else {
       for (let i = 0; i <= y; i++) {
-        if (i % 2 == 0) {
-          negativeHash.push("#");
-        } else {
-          negativeHash.push(" ");
-        }
+        i % 2 == 0 ? negativeHash.push("#") : negativeHash.push(" ");
       }
       hashArray.push(negativeHash.join("") + "\n");
       negativeHash = [];
@@ -30,4 +22,5 @@ const chessBoard = (x, y) => {
   return console.log(hashArray.join(""));
 };
 
-chessBoard(100, 20);
+// refactor
+chessBoard(5, 20);
